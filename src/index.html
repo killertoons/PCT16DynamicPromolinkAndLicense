@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./script.js"></script>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload="reload()">
+
+<h1>PC TuneUp 16 Dynamic promolink and License without TRM</h1>
+<div id='sourceCode'>
+    <div class='inputDescription'>CID<input id='cid' class='inputValue' type='text' value='795' onkeyup="reload()"></div>
+    <div class='inputDescription'>Campaign name<input id='campaignName' class='inputValue' type='text' value='17_Q1_PCT Trial Reset LC 16_OO-3135' onkeyup="reload()"></div>
+    <div class='inputDescription'>Run<input id='run' class='inputValue' type='text' value='1' onkeyup="reload()"></div>
+    <div class='inputDescription'>Offer<input id='offer' class='inputValue' type='text' value='1' onkeyup="reload()"></div>
+    <div class='inputDescription'>Suppressed countries:<input id='suppressedCountries' class='inputValue' type='text' value='JP;KR;BR;SG;CN;CA' onkeyup="reload()"></div>
+    <div class='inputDescription'>Suppressed languages:<input id='suppressedLanguages' class='inputValue' type='text' value='1044;1046;1034' onkeyup="reload()"></div>
+    <div class='inputDescription'>Enabled licenses:<input id='enabledLicenses' class='inputValue' type='text' value='1;' onkeyup="reload()"></div><span class="right">// if you want target illegal users set 2</span>
+    <div class='inputDescription'>Illegal users:<input id='illegalLicenses' class='inputValue' type='text' value='0' onkeyup="reload()"></div>
+    <div class='inputDescription'>Limit:<input id='limit' class='inputValue' type='text' value='50' onkeyup="reload()"></div>
+    <div class='inputDescription'>AB test:<input id='abTest' class='inputValue' type='text' value='1,1' onkeyup="reload()"></div>
+    <div class='inputDescription'>Offer names:<input id='offerNames' class='inputValue' type='text' value='1,otap_a;2,otap_b' onkeyup="reload()"></div>
+    <div class='inputDescription'>Start date:<input id='startDate' class='inputValue' type='text' value='19700101' onkeyup="reload()"></div><span class="right">// number of days( for example "7") or date in format: "20171231"</span>
+    <div class='inputDescription'>End date:<input id='endDate' class='inputValue' type='text' value='20170126' onkeyup="reload()"></div>
+    <div class='inputDescription'>Tracking:<input id='tracking' class='inputValue' type='text' value='DU%20OTAP' onkeyup="reload()"></div><span class="right">// Test or Production</span>
+    <div class='inputDescription'>UrlDomain:<input id='urlDomain' class='inputValue' type='text' value='Test' onkeyup="reload()"></div>
+    <div class='inputDescription'>Frequency:<input id='frequency' class='inputValue' type='text' value='1440' onkeyup="reload()"></div>
+    <div class='inputDescription'>Count:<input id='count' class='inputValue' type='text' value='3' onkeyup="reload()"></div><span class="right">// yes - only show if AV is installed, no - only show if AV is NOT installed, nevermind - always show</span>
+    <div class='inputDescription'>AV Status:<input id='avStatus' class='inputValue' type='text' value='nevermind' onkeyup="reload()"></div>
+    <div class='inputDescription'>Day of week:<input id='dayOfWeek' class='inputValue' type='text' value='1111111' onkeyup="reload()"></div>
+    
+</div>
+
+<div>
+
+    <form id="jsonFile" name="jsonFile" enctype="multipart/form-data" method="post">
+
+    <div style='width: 750px; border:1px solid #ffffff; margin-top: 20px;'>
+        <div  style='text-align: left; float: left;'>
+            <h2>Export</h2>
+            <input class='export' type="button" value='Export metadata' onclick="exportData()"/>
+            <input class='export' type="button" value='Export CODE' onclick="exportCode()"/>
+            <div id="container"></div>
+        </div>
+
+        <div style='text-align: right;'>
+            <h2 style='text-align: left; padding-left: 435px;'>Import</h2>
+            <input type='file' id='fileinput'>
+            <input type='button' id='btnLoad' value='Load' onclick='loadFile();'>
+        </div>
+    </div>
+</form>
+</div>
+
+<div id="container"></div>
+
+<div id="result">neco</div>
+
+</body>
+</html>
+

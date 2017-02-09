@@ -1,0 +1,58 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:14px;
+}
+
+pre {
+    font-family: "Courier New", Courier, monospace !important;
+    font-size: 14px;
+}
+
+.inputDescription {
+    font-style: bold;
+}
+
+.inputValue {
+    position: absolute;
+    left: 200px; 
+    width: 300px;
+    text-align: right;
+    
+}
+
+.export {
+    width: 120px;
+    text-align: center;
+}
+
+.import {
+    width: 100px;
+    text-align: center;
+}
+
+.text {
+    text-align: left;
+}
+
+#result {
+    border: 3px solid black;
+    margin-top: 50px;
+    padding: 5px;
+}
+
+.right {
+    position: absolute;
+    left: 510px;
+}
+
+.exportSet {
+    width: 300px;
+    border: 0px solid #ffffff
+}
+
+.importSet {
+    width: 300px;
+    border: 0px solid #ffffff
+}
+
+
