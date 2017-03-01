@@ -1,3 +1,5 @@
+//test
+
 function returnCode() {
     var cid = document.getElementById('cid').value;
     var campaignName = document.getElementById('campaignName').value;
@@ -22,7 +24,7 @@ function returnCode() {
 
     var result = '';
 
-    result += '// webhalla chain: cid' + cid + '-dis-prg\n'; 
+    result += '// webhalla chain: cid' + cid + '-dis-prg\n';
     result += '// CMMS: '+ campaignName + '\n';
     result += '// cid: ' + cid + '\n';
     result += '// run: ' + run + '\n\n';
@@ -35,14 +37,14 @@ function returnCode() {
     result += '     pushbi( true,"' + cid + 'e5", $lic_lct );\n';
     result += '     unset $IDMARK_C' + cid + 'TC;\n';
     result += '   }\n\n';
-    result += '   // converted to free\n';      
+    result += '   // converted to free\n';
     result += '   if ( $lic_ser == "55616639" ) {\n';
     result += '     pushbi( true,"' + cid + 'e5", $lic_lct );\n';
     result += '     unset $IDMARK_C' + cid + 'TC;\n';
     result += '    }\n';
     result += ' }\n\n';
 
-    result += ' // converted to paid\n';       
+    result += ' // converted to paid\n';
     result += ' if ( $lic_lct == 4 ) {\n';
     result += '   if (! exists $IDMARK_C796TP) {\n';
     result += '     pushbi( true,"' + cid + 'e5", $lic_lct );\n';
@@ -157,22 +159,22 @@ function returnCode() {
     result += 'if ( exists $globalSentLicense or exists $globalTrmTargetted ) {\n';
     result += '     pushbi( true,"' + cid + 'e95", 6 );\n';
     result += '     back;\n';
-    result += '}\n\n';  
-    
+    result += '}\n\n';
+
     result += 'if (! ($ctry in "' + enabledCountries + '")) {\n';
     result += '     pushbi( true,"' + cid + 'e95", 7 );\n';
     result += '     back;\n';
     result += '}\n\n';
 
     result += 'private $secondsAfterInstallation = $datetime_ts - $tmInstance_UserCreated;\n';
-    
+
     result += 'if (exists $IDMARK_TESTTIME) {\n';
     result += '     $secondsAfterInstallation = $IDMARK_TESTTIME;\n';
     result += '}\n\n';
 
     result += '// at least 70 days after installation\n';
     result += 'if ($secondsAfterInstallation <= 6048000) {\n';
-    result += ' pushbi( true,"' + cid + 'e95", 8 );\n';    
+    result += ' pushbi( true,"' + cid + 'e95", 8 );\n';
     result += ' back;\n';
     result += '}\n\n';
 
@@ -193,7 +195,7 @@ function returnCode() {
     result += 'private $promoCount = ' + count + ';\n';
     result += 'private $promoAvStatus = "' + avStatus + '"; // yes - only show if AV is installed, no - only show if AV is NOT installed, nevermind - always show\n';
     result += 'private $promoDayOfWeek = "' + dayOfWeek + '";\n\n';
-  
+
     result += '// autopromolink\n';
     result += 'cmpPcTuSendDynamicPromolink ($promoHash, $promoEndDate, $promoUri, $promoStartDate, $promoFreq, $promoCount, $promoAvStatus, $promoDayOfWeek);\n\n';
 
@@ -216,7 +218,7 @@ function returnCode() {
 }
 
 function reload(){
-    
+
     var resultCode = '<pre>';
 
     resultCode += returnCode();
@@ -254,7 +256,7 @@ function loadFile() {
 
     function receivedText(e) {
       lines = e.target.result;
-      var importedDataObj = JSON.parse(lines); 
+      var importedDataObj = JSON.parse(lines);
       console.log(importedDataObj.sourceData.length);
 
       for (var i = 0; i<importedDataObj.sourceData.length; i++) {
@@ -305,18 +307,18 @@ function exportData(){
         //var obj = JSON.parse(result);
         //console.log(obj.sourceData[1].value);
         //alert(exportResult[1].textContent);
-    
+
 }
 
 
 function exportCode(){
-    
+
         var result = returnCode();
 
         console.log(result);
 
         var cid = document.getElementById('cid').value;
-        var name = 'cid' + cid + '-dis-prg'; 
+        var name = 'cid' + cid + '-dis-prg';
 
 
         var data = "text/json;charset=utf-8," + encodeURIComponent(result);
