@@ -1,4 +1,4 @@
-//test
+//test2
 
 function returnCode() {
     var cid = document.getElementById('cid').value;
